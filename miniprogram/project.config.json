@@ -1,0 +1,9 @@
+{
+  "appid":"touristappid",
+  "projectname":"low-cost-life-guide",
+  "description":"低成本生活指南：分类、检索、收藏与原始出处",
+  "compileType":"miniprogram",
+  "libVersion":"3.17.2",
+  "setting":{"es6":true,"minified":true,"minifyWXSS":true,"minifyWXML":true,"urlCheck":true,"compileHotReLoad":true},
+  "packOptions":{"ignore":[]}
+}

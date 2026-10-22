@@ -1,0 +1,8 @@
+<view class="page">
+ <view class="eyebrow">我的生活书签</view><view class="page-title">有用的建议，随手可查</view><view class="saved-intro">让读过的建议，成为随手能找到的答案。</view>
+ <view class="shelf-stats"><view class="stat"><text class="stat-number">{{favoritesCount}}</text><text class="stat-label">条收藏</text></view><view class="stat-line"></view><view class="stat"><text class="stat-number">{{historyCount}}</text><text class="stat-label">条阅读足迹</text></view><view class="shelf-stamp"><view>留给</view><view>自己</view></view></view>
+ <view class="saved-tabs"><button class="{{mode==='favorites'?'selected':''}}" data-mode="favorites" bindtap="mode">我的收藏</button><button class="{{mode==='history'?'selected':''}}" data-mode="history" bindtap="mode">最近读过</button><button wx:if="{{mode==='history' && rows.length}}" class="clear-history" bindtap="clear">清空</button></view>
+ <view wx:if="{{error}}" class="warning">{{error}}</view><entry-card class="entry-host" wx:for="{{rows}}" wx:key="id" entry="{{item}}"/>
+ <view wx:if="{{!rows.length && !error}}" class="empty"><view class="empty-symbol">◇</view><view class="empty-title">{{mode==='favorites'?'给下一次需要，留个书签':'从感兴趣的一条开始'}}</view><view class="empty-note">{{mode==='favorites'?'打开一条建议，点击底部收藏，就能在这里找到。':'读过的建议会自动留在这里，最多保存 100 条。'}}</view><button class="primary-button" bindtap="explore">去发现有用的建议 →</button></view>
+ <view class="local-note"><view class="local-dot"></view><view>记录仅保存在当前设备<text>{{"\n"}}</text><text>清理缓存或更换设备可能丢失，暂不支持云同步。</text></view></view><button class="about-button" bindtap="about">内容来源与使用说明 ↗</button>
+</view>

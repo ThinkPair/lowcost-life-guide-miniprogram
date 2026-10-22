@@ -1,0 +1,3 @@
+App({
+  globalData: { libraryFilter: null }
+});

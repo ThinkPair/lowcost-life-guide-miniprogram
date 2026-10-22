@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "version": "0.2.1",
+  "rendering": "Official WeChat simulator screenshots inspected by the primary agent",
+  "screenshots": {
+    "01-full-summary.png": "70e5a84543eba7018386f8cb547687b4222e599560444f3a465e6e9dd3690af5",
+    "02-cost-context.png": "d24526d4fcdd23c7b85c10588a7ad9c36ed366be223fcfc29fbcd639f328afb5",
+    "03-notes.png": "2280bf654caf65bf403798ad726aa47a9a09f3aa1be7223cc3a4fa154d068bc6",
+    "04-original-emphasis.png": "746cdca3712181558483532274cee99c8c203b10a69a8317a3767d30e7fbcb93",
+    "05-source-glossary.png": "069d23005bd7c820929d85828ef863e20284c71d5a19683139e62b649675fba6",
+    "06-editorial-note.png": "5e7a5bd19f81bf96f4cb162a93c2abe5ba548237cd41b092db482d66e77126ce",
+    "07-reading-guide.png": "15e4f4fe38c18db6fa41b4a4cceda0d41015b408837d8877584ec9d4db811106",
+    "08-cost-caveat.png": "d076014d33662403463f502876695e5c6d08a2fd525d7634e776d7da023a1cf4"
+  },
+  "verified": [
+    "Full original summary shown without two-line clamp",
+    "Source cost tag distinguished from actual fees",
+    "Original six field names and order",
+    "Notes jump with complete original prose",
+    "HLA-B*5801 and source emphasis displayed correctly",
+    "Original terminology and attribution",
+    "Editorial source discrepancy notice distinct from original text"
+  ],
+  "packageSHA256": "8e0a4239388860d5fd2482daf5eb28f7d6f0ff38f7c199534372d3052a96f2e3",
+  "realPhone": false
+}

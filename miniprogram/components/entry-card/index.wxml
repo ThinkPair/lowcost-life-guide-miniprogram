@@ -1,0 +1,6 @@
+<view wx:if="{{entry}}" class="entry-card" bindtap="open" hover-class="pressed" role="button" aria-label="{{entry.title}}">
+  <view class="entry-top"><text class="entry-chapter">{{entry.chapterTitle}}</text><text class="entry-arrow">↗</text></view>
+  <view class="entry-title">{{entry.title}}</view>
+  <view class="entry-summary-label">解读 · 原文</view><view class="entry-summary">{{entry.summary}}</view>
+  <view class="entry-bottom"><text class="entry-cost">{{entry.costLabel}}</text><text wx:if="{{entry.evidence}}" class="entry-evidence">作者分级 {{entry.evidence}}</text></view><view wx:if="{{entry.hasSourceNote}}" class="entry-note">原文有表述差异 · 阅读核对提示 →</view><view wx:elif="{{entry.hasCaveat}}" class="entry-note">阅读成本、收益与备注 →</view>
+</view>

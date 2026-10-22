@@ -1,0 +1,11 @@
+<view class="page library">
+ <view class="eyebrow">按需要查找 · 共 34 章</view><view class="page-title">找到适合你的办法</view><view class="library-intro">按主题和章节查找；钱标签沿用原文，实际花费见正文。</view>
+ <view class="search-box search-trigger" bindtap="search" role="button"><view class="search-glyph"></view><text>搜索全部建议与原文</text><text class="trigger-arrow">↗</text></view>
+ <scroll-view scroll-x class="group-scroll" show-scrollbar="{{false}}"><view class="group-tabs"><button class="group-tab {{!groupId?'selected':''}}" data-id="" bindtap="group">全部</button><button wx:for="{{groups}}" wx:key="id" class="group-tab {{groupId===item.id?'selected':''}}" data-id="{{item.id}}" bindtap="group">{{item.shortName || item.name}}</button></view></scroll-view>
+ <view class="filter-row"><picker class="chapter-picker" mode="selector" range="{{chapterOptions}}" range-key="title" value="{{chapterIndex}}" bindchange="chapter"><view class="picker-label">{{chapterOptions[chapterIndex].title}} <text>⌄</text></view></picker><button class="free-filter {{freeOnly?'active':''}}" bindtap="free">{{freeOnly?'✓ ':''}}钱标签为 0</button></view>
+ <view class="evidence-row"><text class="evidence-title">作者分级</text><button wx:for="{{['A','B','C']}}" wx:key="*this" class="grade {{evidence===item?'grade-active':''}}" data-value="{{item}}" bindtap="evidence">{{item}}</button><button class="grade-help" bindtap="about">如何理解？</button></view>
+ <view class="result-head"><text class="list-count">{{total}} 条建议</text><button wx:if="{{groupId || chapterId || freeOnly || evidence}}" bindtap="reset">重置筛选</button></view>
+ <entry-card class="entry-host" wx:for="{{rows}}" wx:key="id" entry="{{item}}"/>
+ <view wx:if="{{!total}}" class="empty"><view class="empty-symbol">○</view><view class="empty-title">换个条件看看</view><view class="empty-note">暂时没有同时符合这些条件的建议。</view><button class="secondary-button" bindtap="reset">清除筛选</button></view>
+ <button wx:if="{{hasMore}}" class="secondary-button" bindtap="more">再看 20 条 ↓</button><view wx:elif="{{total}}" class="bottom-note">已显示全部 · 挑适合自己的就好</view>
+</view>

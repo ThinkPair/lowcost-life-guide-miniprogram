@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-10-10T01:40:41.185Z",
+  "runtime": "v24.14.1",
+  "method": "Node VM with synthetic WeChat API and synthetic storage; no live device, personal data, or remote code",
+  "totals": {
+    "entries": 667,
+    "chapters": 34,
+    "groups": 8,
+    "tests": 18,
+    "passed": 18,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "catalog-detail referential completeness and fields",
+      "status": "pass"
+    },
+    {
+      "name": "fresh storage favorites persist and history is unique, newest-first, capped at 100",
+      "status": "pass"
+    },
+    {
+      "name": "malformed JSON and incompatible storage schema block all mutations and preserve bytes",
+      "status": "pass"
+    },
+    {
+      "name": "non-string storage members are recognized as corrupted instead of overwritten",
+      "status": "pass"
+    },
+    {
+      "name": "read errors and write failures propagate without loss or success UI",
+      "status": "pass"
+    },
+    {
+      "name": "all detail pages load with complete actionable identity and original sources",
+      "status": "pass"
+    },
+    {
+      "name": "unknown and inherited-property detail IDs produce safe not-found state",
+      "status": "pass"
+    },
+    {
+      "name": "detail reading remains available through storage errors",
+      "status": "pass"
+    },
+    {
+      "name": "clear history cancellation preserves records and confirmation preserves favorites",
+      "status": "pass"
+    },
+    {
+      "name": "group/chapter filtering and every detail breadcrumb return to the exact chapter",
+      "status": "pass"
+    },
+    {
+      "name": "zero-result filters recover and home all-navigation clears prior filters",
+      "status": "pass"
+    },
+    {
+      "name": "not-found recovery returns to all suggestions even when library had a prior filter",
+      "status": "pass"
+    },
+    {
+      "name": "multi-word search is AND, insensitive to case, and includes original source URLs",
+      "status": "pass"
+    },
+    {
+      "name": "home navigation encoded Chinese search matches direct Chinese search and decodes once",
+      "status": "pass"
+    },
+    {
+      "name": "search entry safely preserves malformed percent input",
+      "status": "pass"
+    },
+    {
+      "name": "copy source validates scheme and shows failure feedback",
+      "status": "pass"
+    },
+    {
+      "name": "all WXML event handlers resolve and registered routes have all required files",
+      "status": "pass"
+    },
+    {
+      "name": "all app JavaScript parses without browser or Node runtime dependencies",
+      "status": "pass"
+    }
+  ],
+  "limitations": [
+    "No official WeChat compiler, native WXML rendering, or device JSCore validation in this independent lane.",
+    "No independent medical/legal/financial verification of upstream content."
+  ],
+  "sourceSHA256": {
+    "app.js": "89edcf890632e929e037274928dd80391c34f1f32193b7533511ea00833cb5df",
+    "app.json": "15125b18084a4075646533ea67f957cbc5b84f5fe64662e738c3803953b07e76",
+    "components/entry-card/index.js": "c325c637795797246f3cfb5722a66bfbe1987811d383d8abdc925be2885438e6",
+    "components/entry-card/index.json": "6bcc2e9e536384851fcfbdd823aee8ae4331243636adc4a656a64a44d9cf9318",
+    "components/entry-card/index.wxml": "8cb067cb4f0bbda738c4d7b87ef1459b0fe75d3701ec666c5f41c70b7bbbaff6",
+    "content/about/index.js": "f0c38ed77a2eff0b084d77da31ab59c323ec6373538fe54761b520cba5c3600b",
+    "content/about/index.json": "fb4e184d8d80cde76894905abae479b2c904706ba0e39d80cf073576133cf480",
+    "content/about/index.wxml": "ff5a76f66bb5f981d54ab394dc263845f2b70645d5cab34f475211d3c0fc4ffe",
+    "content/data/entries.js": "cdd112a937239e2821da170fee1c9033c37ca0e8b5342413879b58407546faa7",
+    "content/detail/index.js": "61de7e42859d4696bd7f17d1e8f7fc0dc166a9e5883d9d82ac20044d3dc55e20",
+    "content/detail/index.json": "c8b2378c88d59daa626aeaf83c66cd160b2da9b8e16d6be14fa7e071939738fb",
+    "content/detail/index.wxml": "d8f91a0bb542c29e819164966d5a24a5343dfd31d7dae23c8119eb1cd0b17413",
+    "content/search/index.js": "030450a3d2f8d4c599d86edf4a0814947274ec95f734cc03df780b1a4e82b724",
+    "content/search/index.json": "68e7d2133217f7c4c8a4dbcfe62522d089683e1302853028098c45248452e24a",
+    "content/search/index.wxml": "a6f229a2e49032a2089a970ddd8602d2c2114cdfe469761263d37a6c46d1091a",
+    "data/catalog.js": "643d93240d455cced817d08afc48608148f6124f0fdbce54787b38fc5a97330c",
+    "data/reading-guide.js": "aed968a4f4c645cc354421db8a6efeb70f310c88d57cb9792ab50d4de39dd4db",
+    "data/source-notes.js": "5b42a2085d9d8967320dd3a1d5fc237a34e89f56d2d57913ec2dc9da7894934f",
+    "lib/catalog.js": "231d059081c365f92595b893c0cb66683edd1765dfef64a9903c11a2d0052007",
+    "lib/reading.js": "4b2cdbcb0c21b5094f8d03bd35c8891f2daa5b637cc3e70c308b33f94511570f",
+    "lib/storage.js": "e83bbc1906ebda3c808353e940241e56e628b377472931f660013c8d62b00f2b",
+    "lib/version.js": "9a2b5e45a4cd9d7d1009975dda95f04e9b2aa0d0c5a441edbac9617fc7615ca5",
+    "pages/home/index.js": "eee33a4ccfead0d68b163dea0fde72cf930d6d4d960e3eea1f804f0b23fc1b38",
+    "pages/home/index.json": "e60f4ebd3e9e9cff627a9e89908c22e9e23cd6b8db941d874c82cbfb47ed215f",
+    "pages/home/index.wxml": "4b5836f473ffe0d80b7020f44c4ae06fdf0503c9bb4e4a25de3d88922e2ac6bb",
+    "pages/library/index.js": "77d58ff56774613b4d4eb52ba0506ef6562c558bbe84028a964fdf47d17e649b",
+    "pages/library/index.json": "1aaf3a1c600ce332c20fa18241daf06084f47359b71d3e5ecaffd1685bf2ec35",
+    "pages/library/index.wxml": "968760b39e0d91840e148d81e818df76bf4d1f5eaefe262c8ab267bdf0b862a2",
+    "pages/saved/index.js": "189737ca2195e6f90d03962376ae053e5122b95732e2c8793f9dd6b1753f8ff1",
+    "pages/saved/index.json": "b1e66e186679dd892a9a98870005e266633d12bb9293ac181c1a9c101e0d4217",
+    "pages/saved/index.wxml": "e320c16a5a1bcfb1605a8b129d0281ebb55143a562cf0f7a6de265fbcde20e9a",
+    "project.config.json": "1b4547132054e80401100537be46a6aeed55ea183a2dc797cf1e3a7d3988aefb",
+    "sitemap.json": "7dcfd48fbb1fce92dff2cfcdafae4a78bd558ad5f5be4191871c3167d981e49e"
+  }
+}

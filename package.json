@@ -1,0 +1,12 @@
+{
+  "name": "low-cost-life-guide",
+  "version": "0.2.1",
+  "private": true,
+  "scripts": {
+    "test": "node tests/independent-core.cjs",
+    "test:wechat": "node tests/official-flow.cjs"
+  },
+  "devDependencies": {
+    "miniprogram-automator": "0.12.1"
+  }
+}

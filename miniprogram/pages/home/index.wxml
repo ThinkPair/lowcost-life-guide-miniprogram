@@ -1,0 +1,17 @@
+<view class="page home">
+ <view class="home-mast"><view class="home-note"><view class="brand-mark"><view></view><view></view><view></view></view><text>认真生活，不必昂贵</text></view><button class="about-link" bindtap="about">关于指南 <text>›</text></button></view>
+ <view class="hero">
+  <view class="hero-copy"><view class="hero-tag">给日常，一点好办法</view><view class="hero-title">少花一点，<view>生活好一点。</view></view><view class="hero-desc">省钱、省时，也照顾好自己。</view><button class="hero-action" bindtap="all">发现实用建议 <text>→</text></button></view>
+  <view class="hero-art" aria-hidden="true"><view class="art-ring"></view><view class="art-note note-back"></view><view class="art-note note-front"><view class="note-bookmark"></view><view class="note-check">✓</view><view class="note-line"></view><view class="note-line short"></view><view class="note-label">好好生活</view></view><view class="art-spark">✦</view><view class="art-dot"></view></view>
+ </view>
+ <view class="guide-meta"><view><text class="meta-number">{{meta.totalEntries}}</text> 条生活建议</view><view class="meta-divider"></view><view><text class="meta-number">{{meta.totalChapters}}</text> 个实用章节</view><view class="meta-source">保留原始出处</view></view>
+ <view class="search-box"><view class="search-glyph"></view><input value="{{query}}" bindinput="input" bindconfirm="search" confirm-type="search" placeholder="遇到什么问题？搜一搜" placeholder-style="color:#807063" maxlength="80"/><button class="search-clear" bindtap="search">搜索</button></view>
+ <view class="quick-queries"><text class="quick-label">试试</text><button wx:for="{{['睡眠','省钱','租房','工作']}}" wx:key="*this" data-q="{{item}}" bindtap="quickSearch">{{item}}</button></view>
+ <view wx:if="{{storageError}}" class="warning">{{storageError}}</view>
+ <view class="topic-panel"><view class="section-head"><text class="section-title">从你关心的事开始</text><button class="text-link" bindtap="all">全部 <text>›</text></button></view><view class="group-grid"><button wx:for="{{groups}}" wx:key="id" class="group-item" data-id="{{item.id}}" bindtap="group"><view class="group-icon theme-{{item.id}}"><image src="/assets/theme-{{item.id}}.png" mode="aspectFit"/></view><view class="group-name">{{item.shortName || item.name}}</view></button></view></view>
+ <view wx:if="{{recent}}" class="continue" bindtap="recent" role="button"><view class="continue-icon">↶</view><view class="continue-copy"><view class="caption">继续阅读</view><view class="continue-title">{{recent.title}}</view></view><text class="continue-arrow">›</text></view>
+ <view class="section-head featured-head"><view><view class="section-title">小改变，也值得开始</view><view class="caption">作者标为“钱＝0”，具体成本见正文</view></view><view class="section-mark">今日翻阅</view></view>
+ <entry-card class="entry-host" wx:for="{{featured}}" wx:key="id" entry="{{item}}"/>
+ <view class="shelf" bindtap="saved" role="button"><view class="shelf-icon">✓</view><view class="shelf-copy"><view class="shelf-title">把有用的，留给自己</view><view class="caption">已收藏 {{savedCount}} 条建议</view></view><text class="shelf-arrow">›</text></view>
+ <view class="bottom-note">内容来自《高性价比人生指南》<text>{{"\n"}}</text>按自己的需要，慢慢改善生活</view>
+</view>

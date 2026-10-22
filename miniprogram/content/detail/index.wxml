@@ -1,0 +1,24 @@
+<view wx:if="{{entry}}" class="page detail">
+ <button class="breadcrumb" bindtap="chapter">{{entry.groupName}} / {{chapter.title}} ↗</button>
+ <view class="detail-order">原书第 {{entry.chapterNumber}} 节 · 第 {{entry.number}} 条</view>
+ <view class="detail-title">{{entry.title}}</view>
+ <view class="detail-meta"><text class="pill">{{entry.costLabel}}</text><button class="evidence" bindtap="about">作者分级 {{entry.evidence}} ⓘ</button></view>
+ <view class="cost-explanation">标签沿用作者标记，具体花费以“成本”正文为准。</view>
+ <view wx:if="{{storageError}}" class="warning">{{storageError}}</view>
+ <view wx:if="{{sourceNote}}" class="notes-block editorial-note"><view class="notes-heading">原文核对提示 · 本项目标注</view><text class="notes-text" selectable>{{sourceNote}}</text></view>
+ <view class="reading-note"><text>以下按原文顺序呈现。读完“解读”，请一并查看“备注”中的条件与争议。</text><button bindtap="notes">跳到备注 ↓</button></view>
+ <view wx:if="{{chapter.intro}}" class="chapter-context"><button bindtap="intro" class="fold-heading"><text>本章导语 · 原文</text><text>{{showIntro?'−':'＋'}}</text></button><view wx:if="{{showIntro}}"><rich-text class="context-text" nodes="{{chapter.nodes}}" user-select/><button class="reference-link" wx:for="{{chapter.references}}" wx:key="id" bindtap="related" data-id="{{item.id}}"><text>{{item.location}}</text>{{item.title}} ↗</button><button wx:for="{{chapter.introLinks}}" wx:key="url" class="original-link" bindtap="copy" data-url="{{item.url}}">复制补充原文：{{item.label}} ↗</button></view></view>
+ <view wx:for="{{fields}}" wx:key="label" class="body-field {{item.label==='说人话'?'summary-block':''}} {{item.label==='备注'?'notes-block':''}} {{item.label==='来源'?'source-block':''}}" id="{{item.label==='备注'?'original-notes':'field-'+index}}">
+  <block wx:if="{{item.label==='来源'}}">
+   <button class="fold-heading" bindtap="sources"><view><text>来源 · 原文</text><view class="caption">{{sources.length}} 个链接 · 展开完整来源说明</view></view><text>{{showSources?'−':'＋'}}</text></button>
+   <view wx:if="{{showSources}}"><text class="source-text" selectable>{{item.text}}</text><button wx:for="{{sources}}" wx:key="url" wx:for-item="source" class="source-link" bindtap="copy" data-url="{{source.url}}"><view class="source-no">{{index+1}}</view><view class="source-url">{{source.url}}</view><text class="copy-label">复制</text></button></view>
+  </block>
+  <block wx:else><view class="field-label">{{item.displayLabel}}<text class="original-label">原文</text></view><rich-text class="field-text {{item.label==='说人话'?'summary-text':''}} {{item.label==='备注'?'notes-text':''}}" nodes="{{item.nodes}}" user-select/><button wx:for="{{item.references}}" wx:key="id" wx:for-item="reference" class="reference-link" bindtap="related" data-id="{{reference.id}}"><text>{{reference.location}}</text>{{reference.title}} ↗</button></block>
+ </view>
+ <view wx:if="{{glossary.length}}" class="chapter-context"><button class="fold-heading" bindtap="glossary"><text>本条术语解释 · 原书 {{glossary.length}} 项</text><text>{{showGlossary?'−':'＋'}}</text></button><view wx:if="{{showGlossary}}" class="glossary-list"><view wx:for="{{glossary}}" wx:key="term" class="glossary-item"><view>{{item.term}}</view><text selectable>{{item.text}}</text></view><button class="original-link" bindtap="about">查看原书阅读说明 ↗</button></view></view>
+ <button class="original-link" bindtap="about">原书的数字、术语与分档说明 ↗</button>
+ <button class="original-link" bindtap="copy" data-url="{{entry.entrySourceUrl}}">复制本条原文链接 ↗</button>
+ <view class="detail-footer">原文作者：eternity4719 · CC BY 4.0<text>{{"\n"}}</text>内容快照 {{syncedAt}} · 本版整理阅读方式<text>{{"\n"}}</text>健康、法律及财务事项，请结合自身情况核对原始依据。</view>
+ <view class="detail-actions"><button class="save-button {{isFavorite?'is-saved':''}}" bindtap="favorite">{{isFavorite?'✓ 已收藏':'＋ 收藏这条建议'}}</button><button class="share-button" open-type="share">分享 ↗</button></view>
+</view>
+<view wx:else class="page empty"><view class="empty-title">{{error || '正在打开建议'}}</view><view class="spacer"></view><button class="primary-button" bindtap="explore">回到全部建议</button></view>
